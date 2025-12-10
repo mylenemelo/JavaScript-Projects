@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 10: Loops and Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        #output p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        /* Animation for Array Items */
+        #output .array-items {
+            animation: slideInLeft 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Fade In and Out effect for the object */
+        #output .object-item {
+            animation: fadeInOut 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Bounce effect for the For Loop */
+        #output .for-loop {
+            animation: bounceIn 2s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Project 10: Loops and Arrays</h1>
+
+    <div id="output"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("JavaScript is running!");
+
+            // 1. Function that uses a while loop with animation
+            function countUpToTen() {
+                let number = 1;
+                let output = "";
+
+                let interval = setInterval(function() {
+                    output += number + " ";
+                    document.getElementById("output").innerHTML = `<p class="while-loop"><strong>While Loop:</strong> ${output}</p>`;
+
+                    if (number === 10) {
+                        clearInterval(interval); 
+                    }
+
+                    number++;  
+                }, 500); 
+            }
+
+            // 2. Function that uses a for loop with animation
+            function countDownFromTen() {
+                let output = "";
+                for (let i = 10; i >= 1; i--) {  
+                    output += i + " ";
+                }
+                document.getElementById("output").innerHTML += `<p class="for-loop"><strong>For Loop:</strong> ${output}</p>`;
+            }
+
+            // 3. Function that uses an array with animation
+            function displayArrayItems() {
+                let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+                let output = "Array Items: ";
+                for (let i = 0; i < fruits.length; i++) { 
+                    output += fruits[i] + " ";
+                }
+                document.getElementById("output").innerHTML += `<p class="array-items"><strong>Array Items:</strong> ${output}</p>`;
+            }
+
+            // 4. Create an object using let with animation
+            function createPersonObject() {
+                let person = {
+                    name: "John Doe",
+                    age: 30,
+                    job: "Developer"
+                };
+                let output = `Object: Name - ${person.name}, Age - ${person.age}, Job - ${person.job}`;
+                document.getElementById("output").innerHTML += `<p class="object-item"><strong>Object:</strong> ${output}</p>`;
+            }
+
+            countUpToTen();
+            countDownFromTen();
+            displayArrayItems();
+            createPersonObject();
+        });
+    </script>
+</body>
+</html>
