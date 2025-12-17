@@ -6,7 +6,7 @@ This repository contains all projects completed during this course using HTML, C
 
 - **Portfolio Website**  
   A personal portfolio website built with HTML, CSS, and JavaScript.  
-  Live site: https://PASTE-YOUR-LIVE-LINK-HERE
+  Live site: (https://mylenemelo.github.io/JavaScript-Projects/portfolio%20website/)
 
 - **Basic JavaScript Project**  
   JavaScript exercises demonstrating core concepts such as variables,
